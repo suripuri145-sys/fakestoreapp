@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import Login from "./Login";
-import Register from "./Register";
+import { useState } from "react";
+import Login from "./Login.tsx";
+import Register from "./Register.tsx";
 
 const LandingPage = () => {
   const [isLogin, setIsLogin] = useState(true);

@@ -1,7 +1,7 @@
-import React from "react";
 import { Routes, Route, Link, useNavigate } from "react-router-dom";
 import ProductList from "../components/ProductList";
 import AddProduct from "../components/AddProduct";
+import type { Product } from "../types";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -20,7 +20,9 @@ const Dashboard = () => {
         <button onClick={logout}>Logout</button>
       </nav>
       <Routes>
-        <Route path="add-product" element={<AddProduct />} />
+        <Route path="add-product" element={<AddProduct onAdd={function (product: Product): void {
+          throw new Error("Function not implemented.");
+        } } />} />
         <Route path="products" element={<ProductList />} />
         <Route path="/" element={<ProductList />} />
       </Routes>

@@ -1,17 +1,17 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { loginUser } from "../api";
+import { loginUser } from "../api.ts";
 
 const Login = () => {
-  const [username, setUsername] = useState("mor_2314"); // test user from FakeStoreAPI
-  const [password, setPassword] = useState("83r5^_"); // test password
+  const [username, setUsername] = useState("mor_2314"); 
+  const [password, setPassword] = useState("83r5^_"); 
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e:any) => {
     e.preventDefault();
     try {
       const res = await loginUser({ username, password });
-      localStorage.setItem("token", res.data.token);
+      localStorage.setItem("token", res.token);
       navigate("/dashboard");
     } catch (err) {
       alert("Login failed");

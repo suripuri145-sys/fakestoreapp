@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Product } from "../types";
+import type { Product } from "../types";
 import EditProduct from "./EditProduct";
 
 const ProductList: React.FC = () => {

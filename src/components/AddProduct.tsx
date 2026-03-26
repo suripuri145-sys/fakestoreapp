@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Product } from "../types";
+import type { Product } from "../types";
 
 interface AddProductProps {
   onAdd: (product: Product) => void;
